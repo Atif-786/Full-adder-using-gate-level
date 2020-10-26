@@ -1,0 +1,90 @@
+$date
+	Mon Oct 26 14:48:34 2020
+$end
+$version
+	QuestaSim Version 2020.1_1
+$end
+$timescale
+	1ps
+$end
+
+$scope module FULL_ADDER_TF $end
+$var reg 1 ! In_0 $end
+$var reg 1 " In_1 $end
+$var reg 1 # Cin $end
+$var wire 1 $ Sout $end
+$var wire 1 % Cout $end
+
+$scope module uut $end
+$var wire 1 & In_0 $end
+$var wire 1 ' In_1 $end
+$var wire 1 ( Cin $end
+$var wire 1 $ Sout $end
+$var wire 1 % Cout $end
+$var wire 1 ) t1 $end
+$var wire 1 * t2 $end
+$var wire 1 + t3 $end
+$upscope $end
+$upscope $end
+
+$scope begin std $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0!
+0"
+0#
+0$
+0%
+0)
+0*
+0+
+0(
+0'
+0&
+$end
+#100000
+1#
+1(
+1$
+#200000
+1"
+0#
+1'
+0(
+#300000
+1#
+1(
+1*
+0$
+1%
+#400000
+1!
+0"
+0#
+1&
+0'
+0(
+0*
+1$
+0%
+#500000
+1#
+1(
+1+
+0$
+1%
+#600000
+1"
+0#
+1'
+0(
+0+
+1)
+#700000
+1#
+1(
+1+
+1*
+1$
