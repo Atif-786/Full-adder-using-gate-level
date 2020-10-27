@@ -1,71 +1,33 @@
 // Code your testbench here
 // or browse Examples
-// Code your testbench here
-// or browse Examples
-`timescale 1ns / 1ps
-module FULL_ADDER_TF;
-// Inputs
-reg In_0;
-reg In_1;
-reg Cin;
-// Outputs
-wire Sout;
-wire Cout;
-// Instantiate the Unit Under Test (UUT)
-FULL_ADDER uut (
-.In_0(In_0),
-.In_1(In_1),
-.Cin(Cin),
-.Sout(Sout), 
-  .Cout(Cout)
-);
-initial begin
-// Initialize Inputs
-In_0 = 0;
-In_1 = 0;
-Cin = 0;
-// Wait 100 ns for global reset to finish
-#100;
-// Add stimulus here
-In_0 = 0;
-In_1 = 0;
-Cin = 1;
-// Wait 100 ns for global reset to finish
-#100;
-In_0 = 0;
-In_1 = 1;
-Cin = 0;
-// Wait 100 ns for global reset to finish
-#100;
-In_0 = 0;
-In_1 = 1;
-Cin = 1;
-// Wait 100 ns for global reset to finish
-#100;
-In_0 = 1;
-In_1 = 0;
-Cin = 0;
-// Wait 100 ns for global reset to finish
-#100;
-In_0 = 1;
-In_1 = 0;
-Cin = 1;
-// Wait 100 ns for global reset to finish
-#100;
-In_0 = 1;
-In_1 = 1;
-Cin = 0;
-// Wait 100 ns for global reset to finish
-#100;
-In_0 = 1;
-In_1 = 1;
-Cin = 1;
-// Wait 100 ns for global reset to finish
-#100;
-end
+`timescale 1ns/1ns
+module tb_full_add;
+  reg a;
+  reg b;
+  reg c;
+  
+  wire sum;
+  wire cout;
+ full_add fal(.a(a),.b(b),.c(c),.sum(sum),.cout(cout));
+  initial
+    begin
+      $monitor("$time = %b, a= %b, b= %b. c= %b, sum= %b,cout= %b",$time,a,b,c,sum,cout);
+    end
+  
   initial 
     begin 
-      $dumpfile("half_gate.vcd");
+     #10 a =1'b0; b=1'b0;c=1'b0;
+     #10 a =1'b0; b=1'b0;c=1'b1;
+     #10 a =1'b0; b=1'b1;c=1'b0;
+     #10 a =1'b0; b=1'b1;c=1'b1; 
+     #10 a =1'b1; b=1'b0;c=1'b0; 
+     #10 a =1'b1; b=1'b0;c=1'b1; 
+    #10 a =1'b1; b=1'b1;c=1'b0;
+      #10 a =1'b1; b=1'b1;c=1'b1;
+    end 
+  initial 
+    begin 
+      $dumpfile("fulladd.vcd");
       $dumpvars;
-                end
+    end
 endmodule

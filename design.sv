@@ -1,16 +1,10 @@
 // Code your design here
-`timescale 1ns / 1ps
-module FULL_ADDER(
- input In_0,
- input In_1,
- input Cin,
- output Sout,
- output Cout
- );
-wire t1,t2,t3;
-xor(Sout,In_0,In_1,Cin);
-and(t1,In_0,In_1);
-and(t2,In_1,Cin);
-and(t3,Cin,In_0);
-or(Cout,t1,t2,t3);
+`timescale 1ns/1ns
+module full_add(sum,cout,a,b,c);
+  input a,b,c;
+  output sum,cout;
+  assign sum = a^b^c;
+  assign cout= (a^b)&c|a&c;
 endmodule
+
+  
